@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # --- 初期設定 ---
-API_KEY = "DMMIYAZAKI01"
+API_KEY = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=API_KEY)
 
 # ページの設定
@@ -30,4 +30,5 @@ if st.button("AIに依頼する"):
             except Exception as e:
                 st.error(f"エラーが発生しました: {e}")
     else:
+
         st.warning("何か文字を入力してください。")
